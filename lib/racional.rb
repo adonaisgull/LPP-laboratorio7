@@ -5,21 +5,22 @@
 
 class Racional
 
-  attr_reader :numerador, :denominador
+  attr_reader :num, :denom
   
   def initialize(num, denom)
-    @numerador, @denominador = num, denom
+    @num, @denom = num, denom
     reducir
   end
 
   def reducir
-    div = mcd(@numerador, @denominador)
-    @numerador = @numerador / div
-    @denominador = @denominador / div
+    div = mcd(@num, @denom)
+    @num = @num / div
+    @denom = @denom / div
   end
   
   def mcd(a, b)
     return a if b == 0
     mcd(b, a % b)
   end 
+ 
 end
