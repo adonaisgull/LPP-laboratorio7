@@ -9,7 +9,7 @@ require 'racional'
 describe Racional do
   
   before :each do
-      @racional = Racional.new
+      @racional = Racional.new(1,1)
   end
   
   it "Debe existir un numerador" do
@@ -19,6 +19,14 @@ describe Racional do
   it "Debe existir un denominador" do
     @racional.respond_to?('denominador').should == true
   end
-  
+
+  it "Debe estar en su forma reducida" do
+    @racional = Racional.new(5,10)
+    puts @racional.numerador
+    puts @racional.denominador
+    result = @racional.numerador==1 && @racional.denominador==2
+    result.should == true
+  end 
+    
 end
 
