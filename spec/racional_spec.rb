@@ -28,7 +28,11 @@ describe Racional do
  
   it "Se debe invocar al metodo num() para obtener el numerador" do
     @racional.num.should == 1
-  end   
+  end
+
+  it "Se debe invocar al mentodo denom() para obtener el numerador" do
+    @racional.denom.should == 2
+  end 
   
 end
 
